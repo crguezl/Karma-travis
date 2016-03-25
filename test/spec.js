@@ -6,9 +6,10 @@ describe('prueba', function() {
   });
 });
 
-describe('La medida tiene un tipo', function() {
-  it('El tipo se asigna correctamente', function() {
+describe('La medida tiene un tipo y un valor', function() {
+  it('El tipo y el valor se asignan correctamente', function() {
     var m = new Medida(32,'f');
+    expect(m.value).to.equal(32);
     expect(m.type).to.equal('f');
   });
 });
