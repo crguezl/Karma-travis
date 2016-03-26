@@ -45,11 +45,51 @@ describe('Conversiones Farenheit', function() {
 
 //ASSYNCRONOUS
 
+//describe('La medida tiene un tipo y un valor', function() {
+//    it('El tipo y el valor se asignan correctamente', function(done) {
+//      var m = new Medida(54,'k');
+//      m.convertir(done);
+//      });
+//});
+
+//ASSERT
+var assert = chai.assert;
 
 
-describe('La medida tiene un tipo y un valor', function() {
-    it('El tipo y el valor se asignan correctamente', function(done) {
-      var m = new Medida(54,'k');
-      m.convertir(done);
+suite('temperature', function() {
+  setup(function(){
+     if (typeof __html__ !== 'undefined') {
+         document.body.innerHTML = __html__['tests/index.html'];
+         original = document.getElementById('original');
+         converted = document.getElementById('converted');
+     }
+   });
+   test('32F to C = 0C', function() {
+          original.value = "32F to C";
+          main();
+          assert.deepEqual(converted.innerHTML, "0.00 Celsius");
       });
+    test('32F = 0C', function() {
+        original.value = "32F";
+        main();
+        assert.deepEqual(converted.innerHTML, "0.0 Celsius");
+    });
+    test('45C = 113.0 Farenheit', function() {
+        original.value = "45C";
+        main();
+        assert.deepEqual(converted.innerHTML, "113.0 Farenheit");
+    });
+    test('5X = error', function() {
+        original.value = "5X";
+        main();
+        assert.match(converted.innerHTML, /ERROR/);
+    });
+
+describe("#main", function() {
+    it("No hay logs ni errores", function() {
+      (new main());
+      sinon.assert.notCalled(console.log);
+      sinon.assert.notCalled(console.error);
+    });
+  });
 });
