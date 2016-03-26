@@ -68,7 +68,7 @@ Medida.measures.k=Kelvin;
 Medida.measures.K = Kelvin;
 
 Kelvin.prototype.toCelsius = function(){
-  return (this.value - 273.15);
+  return (this.value - 273.15).toFixed(2);
 };
 
 Kelvin.prototype.toFarenheit = function(){

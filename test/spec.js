@@ -10,12 +10,26 @@ describe('La medida tiene un tipo y un valor', function() {
 
 describe('Conversiones Celsius', function() {
   it('Celsius convierte bien a Fahrenheit', function() {
-    var c = new Celsius(32,'c','f');
-    expect(c.toFarenheit()).to.equal(89.60);
+    var cf = new Celsius(32,'c','f');
+    expect(cf.toFarenheit()).to.equal(89.60);
     });
   it('Celsius convierte bien a Kelvin', function() {
     var ck = new Celsius(32,'c','k');
     expect(ck.toKelvin()).to.equal(305.15);
 
   });
+
+});
+
+describe('Conversiones Kelvin', function() {
+  it('Kelvin convierte bien a Fahrenheit', function() {
+    var kf = new Kelvin(32,'k','f');
+    expect(kf.toFarenheit()).to.equal(-401.8);
+    });
+  it('Kelvin convierte bien a Celsius', function() {
+    var kc = new Kelvin(32,'k','c');
+    expect(kc.toCelsius()).to.equal(-241.14999999999998);
+
+  });
+
 });
