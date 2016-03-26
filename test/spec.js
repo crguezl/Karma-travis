@@ -17,9 +17,7 @@ describe('Conversiones Celsius', function() {
   it('Celsius convierte bien a Kelvin', function() {
     var ck = new Celsius(32,'c','k');
     expect(ck.toKelvin()).to.equal(305.15);
-
   });
-
 });
 
 describe('Conversiones Kelvin', function() {
@@ -30,9 +28,7 @@ describe('Conversiones Kelvin', function() {
   it('Kelvin convierte bien a Celsius', function() {
     var kc = new Kelvin(32,'k','c');
     expect(kc.toCelsius()).to.equal(-241.14999999999998);
-
   });
-
 });
 
 describe('Conversiones Farenheit', function() {
@@ -43,7 +39,17 @@ describe('Conversiones Farenheit', function() {
   it('Farenheit convierte bien a Celsius', function() {
     var fc = new Farenheit(32,'f','c');
     expect(fc.toCelsius()).to.equal(0);
-
   });
+});
 
+
+//ASSYNCRONOUS
+
+
+
+describe('La medida tiene un tipo y un valor', function() {
+    it('El tipo y el valor se asignan correctamente', function(done) {
+      var m = new Medida(54,'k');
+      m.convertir(done);
+      });
 });
