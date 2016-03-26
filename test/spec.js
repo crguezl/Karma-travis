@@ -1,3 +1,4 @@
+//EXPECT
 var expect = chai.expect;
 
 describe('La medida tiene un tipo y un valor', function() {
@@ -29,6 +30,19 @@ describe('Conversiones Kelvin', function() {
   it('Kelvin convierte bien a Celsius', function() {
     var kc = new Kelvin(32,'k','c');
     expect(kc.toCelsius()).to.equal(-241.14999999999998);
+
+  });
+
+});
+
+describe('Conversiones Farenheit', function() {
+  it('Farenheit convierte bien a Kelvin', function() {
+    var fk = new Farenheit(32,'f','k');
+    expect(fk.toKelvin()).to.equal(273);
+    });
+  it('Farenheit convierte bien a Celsius', function() {
+    var fc = new Farenheit(32,'f','c');
+    expect(fc.toCelsius()).to.equal(0);
 
   });
 
