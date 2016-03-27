@@ -14,7 +14,7 @@ gulp.task('minify', function () {
   .pipe(gulp.dest('minified'));
 
   gulp.src('./index.html')
-    .pipe(minifyHTM())
+    .pipe(minifyHTML())
     .pipe(gulp.dest('./minified/'))
 
   gulp.src('./*.css')
