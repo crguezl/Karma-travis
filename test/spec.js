@@ -1,4 +1,4 @@
-//EXPECT
+/*//EXPECT
 var expect = chai.expect;
 
 describe('La medida tiene un tipo y un valor', function() {
@@ -51,7 +51,7 @@ describe('Conversiones Farenheit', function() {
 //      m.convertir(done);
 //      });
 //});
-
+*/
 //ASSERT
 var assert = chai.assert;
 
@@ -59,28 +59,24 @@ var assert = chai.assert;
 suite('temperature', function() {
   setup(function(){
      if (typeof __html__ !== 'undefined') {
-         document.body.innerHTML = __html__['tests/index.html'];
-         original = document.getElementById('original');
+         document.body.innerHTML = __html__['test.html'];
+         convert = document.getElementById('convert');
          converted = document.getElementById('converted');
      }
    });
    test('32F to C = 0C', function() {
-          original.value = "32F to C";
+          convert.value = "32f to c";
           main();
           assert.deepEqual(converted.innerHTML, "0.00 Celsius");
       });
-    test('32F = 0C', function() {
-        original.value = "32F";
+    test('32C to F = 89.60C', function() {
+        convert.value = "32c to f";
         main();
-        assert.deepEqual(converted.innerHTML, "0.0 Celsius");
+        assert.deepEqual(converted.innerHTML, "89.60 Farenheit");
     });
-    test('45C = 113.0 Farenheit', function() {
-        original.value = "45C";
-        main();
-        assert.deepEqual(converted.innerHTML, "113.0 Farenheit");
-    });
+
     test('5X = error', function() {
-        original.value = "5X";
+        convert.value = "5X";
         main();
         assert.match(converted.innerHTML, /ERROR/);
     });
