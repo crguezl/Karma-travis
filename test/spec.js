@@ -81,11 +81,11 @@ suite('temperature', function() {
         assert.match(converted.innerHTML, /ERROR/);
     });
 
-describe("#main", function() {
+/*describe("#main", function() {
     it("No hay logs ni errores", function() {
       (new main());
       sinon.assert.notCalled(console.log);
       sinon.assert.notCalled(console.error);
     });
-  });
+  });*/
 });

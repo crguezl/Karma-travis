@@ -46,11 +46,11 @@ Medida.convertir = function(valor) {
       return source[target]().toFixed(2) + " "+el_tipo; // "0 Celsius"
     }
     catch(err) {
-      return 'Desconozco como convertir desde "'+tipo+'" hasta "'+destino+'"';
+      return 'ERROR';
     }
   }
   else
-    return "Introduzca una temperatura valida: 330e-1 F to C";
+    return "ERROR";
 };
 
 
