@@ -11,7 +11,7 @@ var minifyCSS  = require('gulp-minify-css');
 gulp.task('minify', function () {
   gulp.src('./assets/js/temperature.js')
   .pipe(uglify())
-  .pipe(gulp.dest('minified'));
+  .pipe(gulp.dest('./minified/'));
 
   gulp.src('./index.html')
     .pipe(minifyHTML())
