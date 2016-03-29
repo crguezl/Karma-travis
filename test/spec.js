@@ -75,39 +75,39 @@ suite('Pruebas con Conversor', function() {
       test('32F to C = 0C', function() {
           convert.value = "32f to c";
           main();
-          assert.deepEqual(converted.innerHTML, "0.00 Celsius");
+          assert.deepEqual(converted.innerHTML, "0.00 toCelsius");
       });
       test('77F to K = 298.00 K', function() {
              convert.value = "77f to k";
              main();
-             assert.deepEqual(converted.innerHTML, "298.00 Kelvin");
+             assert.deepEqual(converted.innerHTML, "298.00 toKelvin");
       });
     });
     suite('Celsius a... ', function() {
       test('32C to F = 89.60C', function() {
         convert.value = "32c to f";
         main();
-        assert.deepEqual(converted.innerHTML, "89.60 Farenheit");
+        assert.deepEqual(converted.innerHTML, "89.60 toFarenheit");
       });
       test('44C to K = 317.15K', function() {
         convert.value = "44c to k";
         main();
-        assert.deepEqual(converted.innerHTML, "317.15 Kelvin");
+        assert.deepEqual(converted.innerHTML, "317.15 toKelvin");
       });
     });
     suite('Kelvin a... ', function() {
       test('10K to F = -441.40F', function() {
         convert.value = "10k to f";
         main();
-        assert.deepEqual(converted.innerHTML, "-441.40 Farenheit");
+        assert.deepEqual(converted.innerHTML, "-441.40 toFarenheit");
       });
       test('98K to C = -175.15C', function() {
         convert.value = "98k to c";
         main();
-        assert.deepEqual(converted.innerHTML, "-175.15 Celsius");
+        assert.deepEqual(converted.innerHTML, "-175.15 toCelsius");
       });
     });
-
+});
 /*describe("#main", function() {
     it("No hay logs ni errores", function() {
       (new main());
@@ -115,4 +115,32 @@ suite('Pruebas con Conversor', function() {
       sinon.assert.notCalled(console.error);
     });
   });*/
+
+var expect = chai.expect;
+
+        describe("#match", function() {
+            it("Deberia hacer matching correctamente", function() {
+                var match = Medida.match("32 c to f");
+
+                expect(match.numero).to.equal("32");
+                expect(match.tipo).to.equal("c");
+                expect(match.destino).to.equal("f");
+            });
+        });
+
+
+
+        describe("#convertir", function() {
+            it("Deberia convertir correctamente", function() {
+                expect(Medida.convertir("0c to k")).to.equal('273.15 toKelvin');
+            });
+
+            it("Deberia dar error al pasar a una temperatura desconocida", function() {
+                expect(Medida.convertir("32f to j")).to.equal('ERROR introduzca algo como 2e-4 F to C');
+            });
+
+            it("Deberia dar error al pedir una conversion erronea", function() {
+                expect(Medida.convertir("32k a k")).to.equal('ERROR introduzca algo como 2e-4 F to C');
+            });
+        });
 });

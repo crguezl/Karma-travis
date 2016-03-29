@@ -1,7 +1,7 @@
 "use strict";//utiliza el modo estricto donde no se puede utilizar variables no declaradas
 
   var regexp1= '(?<numero> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?)';
-
+ 
   var regexp2 = XRegExp('^(\\s*)                                    \n' +
                 '(?<numero> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?)\n' +
                 '(\\s*)                                             \n' +
