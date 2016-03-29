@@ -19,38 +19,39 @@ this.value = valor;
 this.type = tipo;
 }
 
+Medida.constructor = Medida;
+Medida.measures = Medida.measures || {};
 
-Medida.match= function(){
+Medida.match= function(valor){
 
-var valor = XRegExp.exec(convert.value, regexp2);
-return valor;
+var valor1 = XRegExp.exec(valor, regexp2);
+return valor1;
 
 }
 
-Medida.measures={};
+//Medida.measures={};
 
 Medida.convertir = function(valor) {
   var measures = Medida.measures;
-
   var match = Medida.match(valor);
+
   if (match) {
     var numero = match.numero,
         tipo   = match.tipo,
         destino = match.destino;
 
-
     try {
       var source = new measures[tipo](numero);  // new Fahrenheit(32)
       var target = "to"+measures[destino].name; // "toCelsius"
-      var el_tipo = measures[destino].name;
-      return source[target]().toFixed(2) + " "+el_tipo; // "0 Celsius"
+      //var el_tipo = measures[destino].name;
+      return source[target]().toFixed(2) + " "+ target; // "0 Celsius"
     }
     catch(err) {
-      return 'ERROR';
+      return "ERROR La conversion no se ha podido realizar";
     }
   }
   else
-    return "ERROR";
+    return "ERROR introduzca algo como 2e-4 F to C";
 };
 
 
