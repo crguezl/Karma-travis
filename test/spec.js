@@ -117,30 +117,44 @@ suite('Pruebas con Conversor', function() {
   });*/
 
 var expect = chai.expect;
+describe("Medida", function()
+{
 
-        describe("#match", function() {
-            it("Deberia hacer matching correctamente", function() {
-                var match = Medida.match("32 c to f");
+            describe("Celsius", function() {
+            it("Construye objeto Celsius", function() {
+                var cons_c1 = new Celsius(32);
+                expect(cons_c1.val).to.equal(32);
+            });
+            it("Convierte a Farenheit", function() {
+                var conv_c2 = new Celsius(32);
+                expect(conv_c2.toFarenheit()).to.equal(89.6);
+            });
+            it("COnvierte a Kelvin", function() {
+                var conv_c3 = new Celsius(32);
+                expect(conv_c3.toKelvin()).to.equal(305.15);
+            });
 
-                expect(match.numero).to.equal("32");
-                expect(match.tipo).to.equal("c");
+        });
+
+        describe("Matching en medida", function() {
+            it("Asiganamos los elementos 77 K to F", function() {
+                var match = Medida.match("77 k to f");
+                expect(match.numero).to.equal("77");
+                expect(match.tipo).to.equal("k");
                 expect(match.destino).to.equal("f");
             });
         });
 
-
-
-        describe("#convertir", function() {
-            it("Deberia convertir correctamente", function() {
+        describe("If y Try catch de medida", function() {
+            it("Convierte correctamente", function() {
                 expect(Medida.convertir("0c to k")).to.equal('273.15 toKelvin');
             });
-
-            it("Deberia dar error al pasar a una temperatura desconocida", function() {
+            it("ERROR de tipo", function() {
                 expect(Medida.convertir("32f to j")).to.equal('ERROR introduzca algo como 2e-4 F to C');
             });
-
-            it("Deberia dar error al pedir una conversion erronea", function() {
+            it("ERROR de tipo1", function() {
                 expect(Medida.convertir("32k a k")).to.equal('ERROR introduzca algo como 2e-4 F to C');
             });
         });
+
 });
