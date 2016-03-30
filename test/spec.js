@@ -56,7 +56,7 @@ describe('Conversiones Farenheit', function() {
 var assert = chai.assert;
 
 
-suite('Pruebas con Conversor', function() {
+suite('Pruebas con Conversor con assert', function() {
   setup(function(){
      if (typeof __html__ !== 'undefined') {
          document.body.innerHTML = __html__['test.html'];
@@ -108,33 +108,42 @@ suite('Pruebas con Conversor', function() {
       });
     });
 });
-/*describe("#main", function() {
-    it("No hay logs ni errores", function() {
-      (new main());
-      sinon.assert.notCalled(console.log);
-      sinon.assert.notCalled(console.error);
-    });
-  });*/
 
 var expect = chai.expect;
-describe("Medida", function()
+describe("Pruebas expect", function()
 {
 
-            describe("Celsius", function() {
-            it("Construye objeto Celsius", function() {
-                var cons_c1 = new Celsius(32);
-                expect(cons_c1.val).to.equal(32);
-            });
+        describe("Celsius", function() {
             it("Convierte a Farenheit", function() {
-                var conv_c2 = new Celsius(32);
-                expect(conv_c2.toFarenheit()).to.equal(89.6);
+                var far = new Celsius(32);
+                expect(far.toFarenheit()).to.equal(89.6);
             });
-            it("COnvierte a Kelvin", function() {
-                var conv_c3 = new Celsius(32);
-                expect(conv_c3.toKelvin()).to.equal(305.15);
+            it("Convierte a Kelvin", function() {
+                var kel = new Celsius(32);
+                expect(kel.toKelvin()).to.equal(305.15);
             });
-
         });
+        describe("Farenheit", function() {
+            it("Convierte a Kelvin", function() {
+                var kel = new Farenheit(32);
+                expect(kel.toKelvin()).to.equal(273.00);
+            });
+            it("Convierte a Celsius", function() {
+                var cel = new Farenheit(32);
+                expect(cel.toCelsius()).to.equal(0.00);
+            });
+        });
+        describe("Kelvin", function() {
+            it("Convierte a Farenheit", function() {
+                var far = new Kelvin(32);
+                expect(far.toFarenheit()).to.equal(-401.8);
+            });
+            it("Convierte a Celsius", function() {
+                var cel = new Kelvin(32);
+                expect(cel.toCelsius()).to.equal(-241.14999999999998);
+            });
+        });
+
 
         describe("Matching en medida", function() {
             it("Asiganamos los elementos 77 K to F", function() {

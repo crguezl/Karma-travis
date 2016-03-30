@@ -40,7 +40,7 @@ Celsius.prototype.toKelvin = function(){
 
 function Farenheit(valor,tipo,nuevoTipo){
 
-  Temperatura.call(this,valor,tipo,nuevoTipo);
+  Temperatura.call(this,valor,"f",nuevoTipo);
 
 }
 Farenheit.prototype = new Temperatura();
@@ -61,7 +61,7 @@ Farenheit.prototype.toKelvin = function(){
 /************* Kelvin ***************/
 
 function Kelvin(valor,tipo,nuevoTipo){
-  Temperatura.call(this,valor, tipo,nuevoTipo);
+  Temperatura.call(this,valor,"k",nuevoTipo);
 
 }
 Kelvin.prototype = new Temperatura();
