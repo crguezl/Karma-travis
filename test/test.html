@@ -15,17 +15,19 @@
   <center><input id="convert"  placeholder="32F" size="50"></center>
   <center><span class="output" id="converted"></span></center>
 
-  <div id="mocha"><p><a href=".">Pruebas para la aplicacion Conversor</a></p></div>
+  <div id="mocha"><p><a href="http://noe-jacobodsi.github.io/mocha_chai_definitivo/">Pruebas para la aplicacion Conversor</a></p></div>
   <div id="messages"></div>
   <!--div id="fixtures"></div-->
   <script src="mocha.js"></script>
   <script src="chai.js"></script>
   <script src="../assets/js/medida.js" data-cover></script>
-    <script src="../assets/js/temperatura.js" data-cover></script>
+  <script src="../assets/js/temperatura.js" data-cover></script>
   <script src="../assets/js/main.js" data-cover></script>
-   <script>mocha.setup('bdd')</script>
-   <script>mocha.setup('tdd')</script>
-  <script>mocha.run();</script>
+    <script>mocha.setup('bdd')</script>
+          <script>mocha.setup('tdd')</script>
+  <script>
+        mocha.run();
+      </script>
   <script src="spec.js"></script>
 
   <!-- Pruebas de cubrimiento -->
