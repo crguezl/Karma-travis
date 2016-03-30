@@ -24,8 +24,8 @@ En esta práctica hemos partido de la práctica anterior. El trabajo realizado h
 
 **Página del autor**
 
-* Web Noé[http://dsi1516.github.io/Practica1](http://dsi1516.github.io/Practica1)
-* Web Jacobo[http://alu0100836059.github.io/pagina_personal](http://alu0100836059.github.io/pagina_personal)
+* Web Noé: (http://dsi1516.github.io/Practica1)
+* Web Jacobo: (http://alu0100836059.github.io/pagina_personal)
 
 **Página Campus Virtual**
-* C.V descripcion de la practica[https://campusvirtual.ull.es/1516/mod/page/view.php?id=182938](https://campusvirtual.ull.es/1516/mod/page/view.php?id=182938)
+* C.V descripcion de la practica: (https://campusvirtual.ull.es/1516/mod/page/view.php?id=182938)

@@ -1,9 +1,9 @@
 (function(exports){
 "use strict";//utiliza el modo estricto donde no se puede utilizar variables no declaradas
 
-  var regexp1= '(?<numero> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?)';
+  var expresion_reducida= '(?<numero> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?)';
 
-  var regexp2 = XRegExp('^(\\s*)                                    \n' +
+  var expresion = XRegExp('^(\\s*)                                    \n' +
                 '(?<numero> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?)\n' +
                 '(\\s*)                                             \n' +
                 '(?<tipo> [fck]) #tipo                           \n' +
@@ -15,19 +15,16 @@
 
 
 function Medida(valor,tipo){
-
-this.value = valor;
-this.type = tipo;
+    this.value = valor;
+    this.type = tipo;
 }
 
 Medida.constructor = Medida;
 Medida.measures = Medida.measures || {};
 
 Medida.match= function(valor){
-
-var valor1 = XRegExp.exec(valor, regexp2);
-return valor1;
-
+    var valor_match_exp = XRegExp.exec(valor, expresion);
+    return valor_match_exp;
 }
 
 //Medida.measures={};
@@ -38,8 +35,8 @@ Medida.convertir = function(valor) {
 
   if (match) {
     var numero = match.numero,
-        tipo   = match.tipo,
-        destino = match.destino;
+        tipo   = match.tipo.toLowerCase(),
+        destino = match.destino.toLowerCase();
 
     try {
       var source = new measures[tipo](numero);  // new Fahrenheit(32)
