@@ -1,7 +1,9 @@
 (function(exports){
 "use strict";//utiliza el modo estricto donde no se puede utilizar variables no declaradas
 
-  var expresion_reducida= '(?<numero> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?)';
+  var expresion_reducida= XRegExp('(?<numero> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?) \n'+
+                                  '(?<espacio>\\s*) \n'+
+                                  '(?<destino>\\s*[fFcCkK]) \n','x');
 
   var expresion = XRegExp('^(\\s*)                                    \n' +
                 '(?<numero> [-+]?[0-9]+(\.[0-9]+)?(?:e[+-]?[0-9]+)?)\n' +
@@ -15,8 +17,18 @@
 
 
 function Medida(valor,tipo){
+  if(tipo){
+    console.log("NORMAL"+valor+tipo);
     this.value = valor;
     this.type = tipo;
+  }else{
+    var sin_tipo = XRegExp.exec(valor,expresion_reducida);
+    if(sin_tipo){
+      console.log("ENTRO EN SIN TIPO");
+      this.value = sin_tipo.numero;
+      this.type = sin_tipo.destino;
+    }
+  }
 }
 
 Medida.constructor = Medida;

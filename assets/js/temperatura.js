@@ -2,8 +2,8 @@
   "use strict";//utiliza el modo estricto donde no se puede utilizar variables no declaradas
 
 /*********** TEMPERATURA ************/
-function Temperatura(valor,tipo,nuevoTipo){
-  this.nuevoTipo = nuevoTipo;//varaible propia que va a tener temperatura para saber a que convertir
+function Temperatura(valor,tipo){
+  //this.nuevoTipo = nuevoTipo;//varaible propia que va a tener temperatura para saber a que convertir
   Medida.call(this, valor, tipo);
   /* tipo es opcional. Debería admitir new Medida("45.2 F") */
 }
@@ -20,10 +20,10 @@ Celsius.prototype.constructor = Celsius;
 Medida.measures.c = Celsius;
 
 
-function Celsius(valor,tipo,nuevoTipo)
+function Celsius(valor,tipo)
 {
   console.log("dentro de constrcutor celsius"+ "valor:"+valor+"tipo" + tipo+"nuevo tipo"+nuevoTipo);
-  Temperatura.call(this,valor,"c",nuevoTipo);
+  Temperatura.call(this,valor,"c");
 }
 
 Celsius.prototype.toFarenheit = function(){
@@ -40,7 +40,7 @@ Celsius.prototype.toKelvin = function(){
 
 function Farenheit(valor,tipo,nuevoTipo){
 
-  Temperatura.call(this,valor,"f",nuevoTipo);
+  Temperatura.call(this,valor,"f");
 
 }
 Farenheit.prototype = new Temperatura();
@@ -59,8 +59,8 @@ Farenheit.prototype.toKelvin = function(){
 
 /************* Kelvin ***************/
 
-function Kelvin(valor,tipo,nuevoTipo){
-  Temperatura.call(this,valor,"k",nuevoTipo);
+function Kelvin(valor,tipo){
+  Temperatura.call(this,valor,"k");
 
 }
 Kelvin.prototype = new Temperatura();
