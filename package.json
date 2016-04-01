@@ -31,11 +31,14 @@
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
     "karma": "^0.13.22",
+    "karma-mocha": "*",
     "karma-html2js-preprocessor": "*",
     "karma-chrome-launcher": "*",
+    "karma-opera-launcher":"*",
     "karma-firefox-launcher": "*",
     "karma-phantomjs-launcher": "*",
-    "mocha": "*"
+    "mocha": "*",
+    "phantomjs-prebuilt": "^2.1.6"
   },
   "dependencies": {}
 }
