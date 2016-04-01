@@ -70,6 +70,12 @@ suite('Pruebas con Conversor con assert', function() {
        main();
        assert.match(converted.innerHTML, /ERROR/);
      });
+
+     test('5C to C = error', function() {
+       convert.value = "5c to c";
+       main();
+       assert.match(converted.innerHTML, /ERROR/);
+     });
    });
    suite('Farenheit a... ', function() {
       test('32F to C = 0C', function() {

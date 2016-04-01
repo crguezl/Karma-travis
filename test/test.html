@@ -5,7 +5,7 @@
   <title>Conversor tests</title>
   <link rel="stylesheet" media="all" href="mocha.css">
   <script type="text/javascript" src="http://xregexp.com/v/3.1.0/xregexp-all.js"></script>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mocha.css" />
 
@@ -17,20 +17,23 @@
 
   <div id="mocha"><p><a href="http://noe-jacobodsi.github.io/mocha_chai_definitivo/">Pruebas para la aplicacion Conversor</a></p></div>
   <div id="messages"></div>
-  <!--div id="fixtures"></div-->
 
-  <script src="../assets/js/medida.js" data-cover></script>
-  <script src="../assets/js/temperatura.js" data-cover></script>
-  <script src="../assets/js/main.js" data-cover></script>
+  <!--div id="fixtures"></div-->
+  <script src="mocha.js"></script><br>
+  <script src="chai.js"></script>
+  <!-- Pruebas de cubrimiento -->
+  <script src="blanket/blanket_mocha.js"></script>
+  <script type="text/javascript" src="../assets/js/medida.js" data-cover></script>
+  <script type="text/javascript" src="../assets/js/temperatura.js" data-cover></script>
+  <script type="text/javascript" src="../assets/js/main.js" data-cover></script>
     <!--script>mocha.setup('bdd')</script-->
-          <script>mocha.setup('tdd')</script>
+          <script>mocha.setup('tdd')</script><br>
   <script>
         mocha.run();
       </script>
   <script src="spec.js"></script>
 
-  <!-- Pruebas de cubrimiento -->
-  <script src="blanket/blanket_mocha.js"></script>
+
 
 </body>
 </html>
