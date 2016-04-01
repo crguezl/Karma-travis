@@ -19,6 +19,9 @@
   "bugs": {
     "url": "http://noe-jacobodsi.github.io/Practica_3"
   },
+  "scripts":{
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
+  },
   "homepage": "http://dsi1516.github.io/Practica1",
   "homepage1": "http://alu0100836059.github.io/pagina_personal",
   "devDependencies": {
@@ -31,14 +34,17 @@
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
     "karma": "^0.13.22",
-    "karma-mocha": "*",
-    "karma-html2js-preprocessor": "*",
-    "karma-chrome-launcher": "*",
-    "karma-opera-launcher":"*",
-    "karma-firefox-launcher": "*",
-    "karma-phantomjs-launcher": "*",
-    "mocha": "*",
-    "phantomjs-prebuilt": "^2.1.6"
+    "karma-chai-plugins": "^0.7.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-ie-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.8",
+    "karma-mocha": "^0.2.2",
+    "karma-opera-launcher": "^0.3.0",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.6",
+    "mocha": "*"
+
   },
   "dependencies": {}
 }
