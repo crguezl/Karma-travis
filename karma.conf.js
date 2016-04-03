@@ -10,12 +10,19 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha','jasmine','chai'],
+    frameworks: ['mocha'],
 
     client: {
       mocha: {
         ui: 'tdd'
       }
+    },
+
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: {
+      '*.html': 'html2js',
+      'test/test.html': ['html2js']
     },
 
 
@@ -26,20 +33,14 @@ module.exports = function(config) {
       'assets/*.js',
       'test/test.html',
       'test/*.css',
-      'test/*.js'
+      'http://xregexp.com/v/3.1.0/xregexp-all.js'
 
     ],
 
 
     // list of files to exclude
-    exclude: [
+    exclude: [ 'gulpfile.js'
     ],
-
-
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
 
 
     // test results reporter to use
@@ -67,12 +68,19 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Firefox', 'PhantomJS', 'Opera'],
+    browsers: ['Chrome',
+              'Firefox',
+              'PhantomJS',
+               'Opera'
+             ],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
+
+    // If browser does not capture in given timeout [ms], kill it
+    captureTimeout: 60000,
 
     // Concurrency level
     // how many browser should be started simultaneous

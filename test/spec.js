@@ -56,10 +56,10 @@ describe('Conversiones Farenheit', function() {
 var assert = chai.assert;
 
 
-suite('Pruebas con Conversor con assert', function() {
+suite('Pruebas con Conversor', function() {
   setup(function(){
      if (typeof __html__ !== 'undefined') {
-         document.body.innerHTML = __html__['test.html'];
+         document.body.innerHTML = __html__['test/test.html'];
          convert = document.getElementById('convert');
          converted = document.getElementById('converted');
      }
@@ -70,7 +70,6 @@ suite('Pruebas con Conversor con assert', function() {
        main();
        assert.match(converted.innerHTML, /ERROR/);
      });
-
      test('5C to C = error', function() {
        convert.value = "5c to c";
        main();
@@ -114,7 +113,7 @@ suite('Pruebas con Conversor con assert', function() {
       });
     });
 });
-
+/*
 var expect = chai.expect;
 describe("Pruebas expect", function()
 {
@@ -173,3 +172,4 @@ describe("Pruebas expect", function()
         });
 
 });
+*/

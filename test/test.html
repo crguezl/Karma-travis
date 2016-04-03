@@ -19,19 +19,21 @@
   <div id="messages"></div>
 
   <!--div id="fixtures"></div-->
-  <script src="mocha.js"></script><br>
-  <script src="chai.js"></script>
+  <!--script src="mocha.js"></script><br>
+  <script src="chai.js"></script-->
   <!-- Pruebas de cubrimiento -->
   <script src="blanket/blanket_mocha.js"></script>
   <script type="text/javascript" src="../assets/js/medida.js" data-cover></script>
   <script type="text/javascript" src="../assets/js/temperatura.js" data-cover></script>
   <script type="text/javascript" src="../assets/js/main.js" data-cover></script>
+
     <!--script>mocha.setup('bdd')</script-->
-          <script>mocha.setup('tdd')</script><br>
+          <script>mocha.setup('tdd')</script>
+          <script type="text/javascript" src="spec.js"></script>
   <script>
         mocha.run();
       </script>
-  <script src="spec.js"></script>
+
 
 
 
