@@ -10,7 +10,9 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha'],
+    frameworks: [
+                  'mocha'
+                ],
 
     client: {
       mocha: {
@@ -21,32 +23,31 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      '*.html': 'html2js',
-      'test/test.html': ['html2js']
-    },
+                    'test/test.html': ['html2js']
+                    },
 
 
     // list of files / patterns to load in the browser
-    files: [
-      'test/*js',
-      'index.html',
-      'assets/*.js',
-      'test/test.html',
-      'test/*.css',
-      'http://xregexp.com/v/3.1.0/xregexp-all.js'
-
-    ],
+    files: ['test/*js',
+            'index.html',
+            'assets/*.js',
+            'test/test.html',
+            'test/*.css',
+            'http://xregexp.com/v/3.1.0/xregexp-all.js'
+          ],
 
 
     // list of files to exclude
     exclude: [ 'gulpfile.js'
-    ],
+             ],
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: [
+                'progress'
+               ],
 
 
     // web server port
@@ -72,7 +73,7 @@ module.exports = function(config) {
               'Firefox',
               'PhantomJS',
                'Opera'
-             ],
+              ],
 
 
     // Continuous Integration mode
