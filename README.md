@@ -16,7 +16,7 @@ En esta práctica hemos partido de la práctica anterior. El trabajo realizado h
 
 **Página de la práctica**
 
-* [Conversor](http://noe-jacobodsi.github.io/mocha_chai_definitivo/)
+* [Conversor](http://noe-jacobodsi.github.io/Karma-travis/)
 
 **Página de la práctica con los test**
 
