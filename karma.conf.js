@@ -12,7 +12,7 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: [
                   'mocha','chai'
-                ],//falla con chai y jasmine
+                ],
 
     client: {
       mocha: {
@@ -34,9 +34,12 @@ module.exports = function(config) {
             'assets/js/medida.js',
             'assets/js/temperatura.js',
 
-            'test/blanket/blanket_mocha.js',
+            'index.html',
+            'test/test.html',
+
             'test/chai.js',
             'test/mocha.js',
+            'test/blanket/blanket_mocha.js',
             'test/spec.js',//test
 
           ],
@@ -85,7 +88,7 @@ module.exports = function(config) {
     singleRun: false,
 
     // If browser does not capture in given timeout [ms], kill it
-    captureTimeout: 60000,
+    //captureTimeout: 60000,
 
     // Concurrency level
     // how many browser should be started simultaneous

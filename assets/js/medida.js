@@ -18,13 +18,13 @@
 
 function Medida(valor,tipo){
   if(tipo){
-    console.log("NORMAL"+valor+tipo);
+    //console.log("NORMAL"+valor+tipo);
     this.value = valor;
     this.type = tipo;
   }else{
     var sin_tipo = XRegExp.exec(valor,expresion_reducida);
     if(sin_tipo){
-      console.log("ENTRO EN SIN TIPO");
+      //console.log("ENTRO EN SIN TIPO");
       this.value = sin_tipo.numero;
       this.type = sin_tipo.destino;
     }

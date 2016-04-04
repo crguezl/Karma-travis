@@ -19,7 +19,7 @@ Temperatura.prototype.get_nuevotipo=function(){//get para trabajar con nuestro n
 
 function Celsius(valor,tipo,nuevoTipo)
 {
-  console.log("dentro de constrcutor celsius"+ "valor:"+valor+"tipo" + tipo+"nuevo tipo"+nuevoTipo);
+  //console.log("dentro de constrcutor celsius"+ "valor:"+valor+"tipo" + tipo+"nuevo tipo"+nuevoTipo);
   Temperatura.call(this,valor,"c");
 }
 Celsius.prototype = new Temperatura();//heredamos de temp
