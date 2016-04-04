@@ -11,13 +11,13 @@ module.exports = function(config) {
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: [
-                  'mocha'
-                ],
+                  'mocha','chai'
+                ],//falla con chai y jasmine
 
     client: {
       mocha: {
         ui: 'tdd'
-      }
+      }//bdd o tdd
     },
 
     // preprocess matching files before serving them to the browser
@@ -28,12 +28,17 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: ['test/*js',
-            'index.html',
-            'assets/*.js',
-            'test/test.html',
-            'test/*.css',
-            'http://xregexp.com/v/3.1.0/xregexp-all.js'
+    files: [
+            'http://xregexp.com/v/3.1.0/xregexp-all.js',
+            'assets/js/main.js',
+            'assets/js/medida.js',
+            'assets/js/temperatura.js',
+
+            'test/blanket/blanket_mocha.js',
+            'test/chai.js',
+            'test/mocha.js',
+            'test/spec.js',//test
+
           ],
 
 
@@ -71,8 +76,7 @@ module.exports = function(config) {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome',
               'Firefox',
-              'PhantomJS',
-               'Opera'
+              'PhantomJS'
               ],
 
 
