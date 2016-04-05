@@ -30,13 +30,11 @@
     "gulp-minify-html": "^1.0.6",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
-
-
-    "html2js":"*",
+    "html2js": "*",
     "karma": "*",
     "karma-chai": "^0.1.0",
     "karma-chai-plugins": "*",
-    "karma-chrome-launcher": "*",
+    "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "*",
     "karma-html2js-preprocessor": "*",
     "karma-jasmine": "*",

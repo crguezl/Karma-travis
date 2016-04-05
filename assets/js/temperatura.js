@@ -11,9 +11,6 @@ function Temperatura(valor,tipo){
 Temperatura.prototype = new Medida();//heredamos
 Temperatura.prototype.constructor = Temperatura;
 
-Temperatura.prototype.get_nuevotipo=function(){//get para trabajar con nuestro nuevo tipo en las clases que heredan
-  return this.nuevoTipo;
-}
 
 /********** CELSIUS **********/
 

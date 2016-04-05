@@ -9,6 +9,13 @@ En esta práctica hemos partido de la práctica anterior. El trabajo realizado h
 -Añada a su README.md un badge Travis como este: Build Status indicando el estado de las pruebas en Travis y enlazando a las mismas.
 -Requisito opcional: Use el plugin gulp-gh-pages para simplificar el despliegue en gh-pages. Vea la sección El plugin gulp-gh-pages.
 
+**Markdonw Travis**
+[![Build Status](https://travis-ci.org/noe-jacoboDSI/Karma-travis.svg?branch=master)](https://travis-ci.org/noe-jacoboDSI/Karma-travis)
+
+**Repositorio Travis**
+
+[Rep.Travis](https://travis-ci.org/noe-jacoboDSI/Karma-travis)
+
 **Repositorio GitHuB**
 
 * [Respositorio github organización noé jacabo](https://github.com/noe-jacoboDSI/Karma-travis)
