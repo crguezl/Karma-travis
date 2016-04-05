@@ -7,15 +7,21 @@ var del     = require('del');
 var minifyHTML = require('gulp-minify-html');
 var minifyCSS  = require('gulp-minify-css');
 var karma   = require('gulp-karma');
+var ghPages = require('gulp-gh-pages');
 
 
-/*
+
+gulp.task('deploy', function() {
+      return gulp.src('test/minified/')
+        .pipe(ghPages());
+    });
+
 gulp.task('test', function() {
   // Be sure to return the stream
   return gulp.src([])
     .pipe(karma({
       configFile: 'karma.conf.js',
-      action: 'run'
+      action: 'watch'//o watch
     }))
     .on('error', function(err) {
       // Make sure failed tests cause gulp to exit non-zero
@@ -23,13 +29,6 @@ gulp.task('test', function() {
     });
 });
 
-gulp.task('default', function() {
-  gulp.src([])
-    .pipe(karma({
-      configFile: 'karma.conf.js',
-      action: 'watch'
-    }));
-});*/
 
 gulp.task('minify', function () {
   gulp.src('./assets/js/temperature.js')
@@ -40,7 +39,7 @@ gulp.task('minify', function () {
     .pipe(minifyHTML())
     .pipe(gulp.dest('test/minified/'))
 
-  gulp.src('./*.css')
+  gulp.src('/test/*.css')
    .pipe(minifyCSS({keepBreaks:true}))
    .pipe(gulp.dest('test/minified/'))
 });

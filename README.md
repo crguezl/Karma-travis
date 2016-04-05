@@ -11,11 +11,11 @@ En esta práctica hemos partido de la práctica anterior. El trabajo realizado h
 
 **Markdonw Travis**
 
-[![Build Status](https://travis-ci.org/noe-jacoboDSI/Karma-travis.svg?branch=master)](https://travis-ci.org/noe-jacoboDSI/Karma-travis)
+* [![Build Status](https://travis-ci.org/noe-jacoboDSI/Karma-travis.svg?branch=master)](https://travis-ci.org/noe-jacoboDSI/Karma-travis)
 
 **Repositorio Travis**
 
-[Rep.Travis](https://travis-ci.org/noe-jacoboDSI/Karma-travis)
+* [Rep.Travis](https://travis-ci.org/noe-jacoboDSI/Karma-travis)
 
 **Repositorio GitHuB**
 
