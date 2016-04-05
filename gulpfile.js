@@ -29,7 +29,6 @@ gulp.task('test', function() {
     });
 });
 
-
 gulp.task('minify', function () {
   gulp.src('./assets/js/temperature.js')
   .pipe(uglify())
